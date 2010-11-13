@@ -67,11 +67,11 @@ class CommentServiceTest extends JUnitSuite with ShouldMatchersForJUnit{
   }
   
   def thenTheCommentShouldNotBeAddedToTheEntry{
-	  assert(!entry.getComments.contains(comment))
+	  assert(!entry.comments.contains(comment))
   }
   
   def thenTheCommentShouldBeAddedToTheEntry{
-	  assert(entry.getComments.contains(comment))
+	  assert(entry.comments.contains(comment))
   }
   
   def andStored{
