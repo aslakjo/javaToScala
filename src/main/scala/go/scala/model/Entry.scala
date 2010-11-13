@@ -8,11 +8,8 @@ import reflect.BeanInfo
 
 @Entity
 @BeanInfo
-class Entry {
+class Entry extends IdPK{
 	
-	@Id
-	@GeneratedValue
-	var id:Long = _
 	var title:String = _
 	var text:String = _
 	var published:Boolean = _

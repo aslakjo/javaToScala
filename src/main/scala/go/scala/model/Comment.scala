@@ -1,18 +1,11 @@
 package go.scala.model
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.ManyToOne
-import java.lang.Long
+import javax.persistence.{Entity, ManyToOne}
 import reflect.BeanProperty
 
 @Entity
-class Comment {
+class Comment extends IdPK{
 	
-	@Id
-	@GeneratedValue
-	@BeanProperty var id:Long = _
 	@BeanProperty var title:String = _
 	@BeanProperty var text:String = _
 
