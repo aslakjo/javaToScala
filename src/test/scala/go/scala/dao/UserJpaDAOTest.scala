@@ -24,11 +24,11 @@ class UserJpaDAOTest extends CrudJpaDAOTest[java.lang.Long, User, UserJpaDAO] {
   }
 	
   def whenUpdatingModel(){
-	model.setName("updated")
+	model.name = "updated"
   }
   
   def thenTheModelShouldBeUpdatedInTheDatabase(){
-	assert(dao.find(model.getId).getName == "updated")
+	assert(dao.find(model.getId).name == "updated")
   }
   
   def id(user:User) = {
