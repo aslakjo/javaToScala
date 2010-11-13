@@ -8,7 +8,7 @@ import reflect.BeanInfo
 @Entity
 @Table(name="USER_TABLE")
 @BeanInfo
-class User extends IdPK{
+class User extends IdPK[User]{
 	
 	var name:String = _
 	var email:String = _

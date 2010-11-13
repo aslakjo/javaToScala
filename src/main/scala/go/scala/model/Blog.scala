@@ -7,7 +7,7 @@ import reflect.BeanInfo
 
 @Entity
 @BeanInfo
-class Blog extends IdPK {
+class Blog extends IdPK[Blog] {
 	
 	var title:String = _
 	var decription:String = _
@@ -18,21 +18,6 @@ class Blog extends IdPK {
 	@OneToMany
 	var entries:List[Entry] = _
 	
-	override def hashCode = {
-		val prime = 31;
-		prime + (id match {
-			case l:Long => l.hashCode
-			case _ => 0
-		})
-	}
-	
-	override def equals(other:Any) = {
-		other match{
-			case b:Blog if(id == b.id) => true
-			case _ => false
-		}
-	}
-
 	override def toString = {
 		"Blog [decription=" + decription + ", entries=" + entries + ", id=" + id + 
 			", title=" + title + ", user=" + user + "]"
