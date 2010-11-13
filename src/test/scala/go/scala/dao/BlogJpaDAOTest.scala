@@ -24,11 +24,11 @@ class BlogJpaDAOTest extends CrudJpaDAOTest[java.lang.Long, Blog, BlogJpaDAO] {
   }
 	
   def whenUpdatingModel(){
-	model.setTitle("updated")
+	model.title = "updated"
   }
   
   def thenTheModelShouldBeUpdatedInTheDatabase(){
-	assert(dao.find(model.getId).getTitle == "updated")
+	assert(dao.find(model.id).title == "updated")
   }
   
   def id(blog:Blog) = {
