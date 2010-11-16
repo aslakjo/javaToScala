@@ -15,7 +15,7 @@ import scala.collection.JavaConversions._
 
 import go.scala.model._
 
-class UserJpaDAOTest extends CrudJpaDAOTest[java.lang.Long, User, UserJpaDAO] {
+class UserJpaDAOTest extends CrudJpaDAOTest[Long, User, UserJpaDAO] {
 
   def createDao = new UserJpaDAO
 	

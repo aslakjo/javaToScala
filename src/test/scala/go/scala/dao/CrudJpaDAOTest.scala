@@ -16,7 +16,7 @@ import scala.collection.JavaConversions._
 
 import go.scala.model._
 
-trait CrudJpaDAOTest[PK, M, DAO <: CrudJpaDAO[PK,M]] extends JUnitSuite with ShouldMatchersForJUnit {
+abstract class CrudJpaDAOTest[PK, M, DAO <: CrudJpaDAO[PK,M]](implicit m:Manifest[M]) extends JUnitSuite with ShouldMatchersForJUnit {
 
   var model:M = _
   var dao:DAO = _
@@ -31,7 +31,7 @@ trait CrudJpaDAOTest[PK, M, DAO <: CrudJpaDAO[PK,M]] extends JUnitSuite with Sho
       em = emf.createEntityManager();
       transcation = em.getTransaction()
       transcation.begin
-	  dao.setEntityManager(em)
+	  dao.em = em
   }
   
   def createDao():DAO

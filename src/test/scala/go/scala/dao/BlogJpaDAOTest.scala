@@ -15,7 +15,7 @@ import scala.collection.JavaConversions._
 
 import go.scala.model._
 
-class BlogJpaDAOTest extends CrudJpaDAOTest[java.lang.Long, Blog, BlogJpaDAO] {
+class BlogJpaDAOTest extends CrudJpaDAOTest[Long, Blog, BlogJpaDAO] {
 
   def createDao = new BlogJpaDAO
 	
