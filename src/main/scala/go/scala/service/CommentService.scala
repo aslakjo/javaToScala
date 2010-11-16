@@ -7,22 +7,22 @@ import go.scala.dao.EntryCrudDAO;
 import go.scala.model.Comment;
 import go.scala.model.Entry;
 
-public class CommentService {
+class CommentService {
 	
-	static final Logger logger = LoggerFactory.getLogger(CommentService.class);
+	val logger:Logger = LoggerFactory.getLogger(classOf[CommentService])
 	
-	private AntiSpamService antiSpamService;
-	private EntryCrudDAO entryCrudDAO;
+	var antiSpamService:AntiSpamService = _
+	var entryCrudDAO:EntryCrudDAO = _
 
-	public void setAntiSpamService(AntiSpamService antiSpamService){
+	def setAntiSpamService(antiSpamService:AntiSpamService){
 		this.antiSpamService = antiSpamService;
 	}
 	
-	public void setEntryCrudDAO(EntryCrudDAO entryCrudDAO) {
+	def setEntryCrudDAO(entryCrudDAO:EntryCrudDAO) {
 		this.entryCrudDAO = entryCrudDAO;
 	}
 	
-	public void addComment(Entry entry, Comment comment){
+	def addComment(entry:Entry, comment:Comment){
 		logger.debug("addComment");
 		if(!antiSpamService.isSpam(comment)){
 			entry.addComment(comment);
