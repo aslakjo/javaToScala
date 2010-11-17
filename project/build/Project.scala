@@ -10,7 +10,7 @@ class Project(info: ProjectInfo) extends DefaultWebProject(info) with Eclipsify{
   "http://scala-tools.org/repo-releases/"
   
   val eclipseLinkRepo = "EclipseLink Repo" at
-   "http://www.eclipse.org/downloads/download.php?r=1&nf=1&file=/rt/eclipselink/maven.repo"
+   "http://ftp.uninett.no/pub/eclipse/rt/eclipselink/maven.repo"
   
   val scalaToolsSnapshots = ScalaToolsSnapshots
 
