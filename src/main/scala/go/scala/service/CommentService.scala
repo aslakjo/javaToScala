@@ -4,19 +4,11 @@ import go.scala.dao.EntryCrudDAO;
 import go.scala.model.Comment;
 import go.scala.model.Entry;
 
-class CommentService extends Loggable[CommentService]{
+abstract class CommentService extends Loggable[CommentService]{
 	
-	var antiSpamService:AntiSpamService = _
-	var entryCrudDAO:EntryCrudDAO = _
+	val antiSpamService:AntiSpamService
+	val entryCrudDAO:EntryCrudDAO
 
-	def setAntiSpamService(antiSpamService:AntiSpamService){
-		this.antiSpamService = antiSpamService;
-	}
-	
-	def setEntryCrudDAO(entryCrudDAO:EntryCrudDAO) {
-		this.entryCrudDAO = entryCrudDAO;
-	}
-	
 	def addComment(entry:Entry, comment:Comment){
 		logger.debug("addComment");
 		if(!antiSpamService.isSpam(comment)){

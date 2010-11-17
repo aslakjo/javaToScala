@@ -6,3 +6,7 @@ import go.scala.model.Entry;
 class EntryJpaDAO extends CrudJpaDAO[Long, Entry] with EntryCrudDAO {
 	
 }
+
+trait EntryJpaDAOPart{
+	val entryCrudDAO = new EntryJpaDAO
+}

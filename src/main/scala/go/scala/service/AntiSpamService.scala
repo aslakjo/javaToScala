@@ -8,3 +8,7 @@ class AntiSpamService {
 		comment.getText().matches(".*enlarge\\s+your\\s+williesjeep.*")
 	}
 }
+
+trait AntiSpamServicePart {
+	val antiSpamService = new AntiSpamService
+}
