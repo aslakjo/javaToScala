@@ -1,0 +1,3 @@
+This is a project with a set of steps/tags for converting a Java application to a Scala application.
+
+It uses among other things SBT, JPA(eclipselink) and DerbyDB
