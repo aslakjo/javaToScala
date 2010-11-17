@@ -1,3 +1,20 @@
 This is a project with a set of steps/tags for converting a Java application to a Scala application.
 
+It it a basic Blog with User
+
 It uses among other things SBT, JPA(eclipselink) and DerbyDB
+
+check the tags out in this sequence:
+
+* init 		- the inital tag (where to start;-)
+* comment 	- Comment entity => Scala
+* entry 	- Entry entity => Scala
+* idpk 		- Adding IdPK trait
+* blog 		- Blog entity => Scala
+* user 		- User entity => Scala
+* dao 		- All the daos with interfaces => Scala
+* service 	- Service layer (it's not a very fancy layer but that is not the point) => Scala
+* loggable	- Adding loggable trait to service instead of declaring it uses implicit Manifest
+* cake		- Using cake pattern for "dependency injection"
+
+Good luck!
